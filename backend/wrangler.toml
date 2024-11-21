@@ -1,0 +1,8 @@
+name = "medium"
+main = "src/index.ts"
+compatibility_date = "2024-10-19"
+compatibility_flags = [ "nodejs_compat" ]
+
+[vars]
+DATABASE_URL ="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiNjBkODE1MDAtNWY0Zi00MmY4LTliYmQtMjQwZDY0NDA2M2FjIiwidGVuYW50X2lkIjoiMDc4YzBlZmEzYTA1NGIxYTE3NWYzZWNjZTYxYWY3ODE5NjQxYTFjOWVjZWJjMDY0NjViMGIxY2QyMzlmNWI1MSIsImludGVybmFsX3NlY3JldCI6Ijg2NTNlOGMwLTg3ZmMtNGY1Ny05MDM2LTMwYjMzMWJhZmM2MiJ9.R33Y_33IczCkK5QdSCz0p0hBFrL8Bkw2o5TKwHdRSyw"
+JWT_SECRET = "asdfgh"
