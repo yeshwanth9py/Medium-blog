@@ -38,7 +38,7 @@ const Publish = () => {
 }
 
 
-function TextEditor({ onChange }: {onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void}) {
+function TextEditor({ onChange }: {onChange: (e: React.ChangeEvent<HTMLTextAreaElement>) => void}) {
     return <div className="mt-2">
         <div className="w-full mb-4 ">
             <div className="flex items-center justify-between border">

@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { Backendurl } from "../config";
 
 
-interface Blog{
+export interface Blog{
     "content": string,
     "title": string,
     "published": string,

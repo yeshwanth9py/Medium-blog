@@ -1,7 +1,8 @@
+import { Blog } from "../hooks"
 import Appbar from "./Appbar"
-import { Avatar, blogtype } from "./Blogcard"
+import { Avatar } from "./Blogcard"
 
-const FullBlog = ({blog}: {blog: blogtype}) => {
+const FullBlog = ({blog}: {blog: Blog }) => {
   return (
     <>
         <Appbar/>
@@ -12,7 +13,7 @@ const FullBlog = ({blog}: {blog: blogtype}) => {
                         {blog.title}
                     </div>
                     <div className="text-slate-500 pt-2">
-                        posted on {blog.publisheddate || "2023-01-01"}
+                        posted on {blog.published|| "2023-01-01"}
                     </div>
                     <div className="pt-4">
                         {blog.content}
@@ -22,11 +23,11 @@ const FullBlog = ({blog}: {blog: blogtype}) => {
                     <div className="text-slate-600 text-lg">Author</div>
                     <div className="flex w-full">
                         <div className="pr-4 flex flex-col justify-center">
-                            <Avatar size="large" name={blog.authorname || "Anonyomous"}/>
+                            <Avatar size="large" name={blog.author.name || "Anonyomous"}/>
                         </div>
                         <div>
                             <div className="text-xl font-bold">
-                                {blog.authorname || "Anonyomous"}
+                                {blog.author.name || "Anonyomous"}
                             </div>
                             <div className="pt-2 text-slate-500">
                                 Random catch phrase describing the author's ability to grab users attention
