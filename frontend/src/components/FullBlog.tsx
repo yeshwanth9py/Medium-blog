@@ -1,8 +1,16 @@
 import { Blog } from "../hooks"
 import Appbar from "./Appbar"
 import { Avatar } from "./Blogcard"
+import Select from 'react-select';
+
+import parse from 'html-react-parser';
+import DOMPurify from 'dompurify';
 
 const FullBlog = ({blog}: {blog: Blog }) => {
+
+    const sanitizedContent = DOMPurify.sanitize(blog.content);
+
+    console.log(sanitizedContent);
   return (
     <>
         <Appbar/>
@@ -16,7 +24,7 @@ const FullBlog = ({blog}: {blog: Blog }) => {
                         posted on {blog.published|| "2023-01-01"}
                     </div>
                     <div className="pt-4">
-                        {blog.content}
+                        {parse(sanitizedContent)}
                     </div>
                 </div>
                 <div className="col-span-4  pt-4">

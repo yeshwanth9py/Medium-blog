@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom"
+// import parse from 'html-react-parser';
+import DOMPurify from 'dompurify';
 
 
 export interface blogtype {
@@ -18,6 +20,13 @@ const Blogcard = ({
     content,
     publisheddate
 }: blogtype) => {
+    // const sanitizedContent = DOMPurify.sanitize(content).slice(0, 500)+"...";
+    const sanitizedContent = DOMPurify.sanitize(content);
+
+    const tempDiv = document.createElement("div");
+    tempDiv.innerHTML = sanitizedContent;
+    const plainText = tempDiv.innerText.slice(0, 100)+"...";
+
     return (
         <>
             <Link to={"/blog/"+id}>
@@ -29,7 +38,10 @@ const Blogcard = ({
                         <div className="pl-2 font-thin text-slate-500 text-sm flex flex-col justify-center">{publisheddate?publisheddate:"2023-01-01"}</div>
                     </div>
                     <div className="text-xl font-semibold pt-2">{title}</div>
-                    <div className="text-md font-thin ">{content.slice(0, 100) + "..."}</div>
+                    <div className="text-md font-thin ">
+                        {plainText}
+                    </div>
+
                     <div className="text-sm text-slate-500 font-thin pt-4">
                         {`${Math.ceil(content.length / 100)} minute(s) read`}
                     </div>
